@@ -8,18 +8,6 @@ import android.os.Bundle;
 // Comments typed successfully
 // I am now doing the doo doo doo
 
-
-
-
-
-
-
-
-
-
-
-
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
