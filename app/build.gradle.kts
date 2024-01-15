@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "algonquin.cst2335.brag0033"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "algonquin.cst2335.brag0033"

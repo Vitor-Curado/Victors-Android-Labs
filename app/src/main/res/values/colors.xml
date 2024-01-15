@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- Blue -->
+    <!-- Primary brand color -->
+    <color name="my_primary">#0055A4</color>
+
+    <!-- Red -->
+    <!-- Secondary colour -->
+    <color name="my_secondary">#EF4135</color>
+
+    <!-- White -->
+    <!-- Status bar colour  -->
+    <color name="my_statusbar">#FFFFFFFF</color>
+
+    <!-- Dark gray -->
+    <color name="dark_gray">#333333</color>
+
+    <color name="yellow">#FDDA24</color>
+    <color name="orange">#FF883E</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="rose">#FF007F</color>
+    <color name="beige">#F5F5DC</color>
+    <color name="navy">#000080</color>
+    <color name="gray">#808080</color>
+    <color name="salmon">#FA8072</color>
+    <color name="crimson">#DC143C</color>
 </resources>
