@@ -4,6 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+// Typing comments as ordered in Making Git Branches 1/6
+// Comments typed successfully
+// I am now doing the doo doo doo
+
+
+
+
+
+
+
+
+
+
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
