@@ -6,6 +6,11 @@ android {
     namespace = "algonquin.cst2335.brag0033"
     compileSdk = 34
 
+    // Add view binding as ordered in Using Text Widgets part 2 of 6
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "algonquin.cst2335.brag0033"
         minSdk = 24
