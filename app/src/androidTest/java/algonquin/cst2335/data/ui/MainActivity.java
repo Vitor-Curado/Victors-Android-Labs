@@ -73,5 +73,9 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
             toast.show();
         });
+
+        // Part 6/6:
+        // In Java, use ViewBinding to add any onClick or onCheckedChange listeners.
+
     }
 }
