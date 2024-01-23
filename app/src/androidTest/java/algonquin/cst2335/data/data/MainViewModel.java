@@ -14,4 +14,9 @@ import androidx.lifecycle.ViewModel;
 public class MainViewModel extends ViewModel
 {
     public MutableLiveData<String> editString = new MutableLiveData<>();
+
+    // Go ahead and add a variable and give it a name that makes sense.
+    // It should actually be a MutableLiveData<Boolean> variable since
+    // we want to be notified when it changes.
+    public MutableLiveData<Boolean> selected = new MutableLiveData<Boolean>();
 }

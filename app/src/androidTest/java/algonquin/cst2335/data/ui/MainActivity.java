@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
 import algonquin.cst2335.brag0033.databinding.ActivityMainBinding;
 import algonquin.cst2335.data.data.MainViewModel;
 
@@ -39,6 +41,37 @@ public class MainActivity extends AppCompatActivity {
         model.editString.observe(this, s ->
         {
             variableBinding.mytext.setText("Your edit text has " + s);
+        });
+
+        // Lab 5/6 session:
+        model.selected.observe(this, selected ->
+        {
+            variableBinding.checkBox.setChecked(selected);
+            variableBinding.radioButton.setChecked(selected);
+            variableBinding.switch1.setChecked(selected);
+        });
+
+        // Lastly, call setOnCheckedChangeListener( ) on each button,
+        // but use the Lambda function version.
+        variableBinding.checkBox.setOnCheckedChangeListener((btn, isChecked) ->
+        {
+            model.selected.postValue(isChecked);
+            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
+            toast.show();
+        });
+
+        variableBinding.radioButton.setOnCheckedChangeListener((btn, isChecked) ->
+        {
+            model.selected.postValue(isChecked);
+            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
+            toast.show();
+        });
+
+        variableBinding.switch1.setOnCheckedChangeListener((btn, isChecked) ->
+        {
+            model.selected.postValue(isChecked);
+            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
+            toast.show();
         });
     }
 }
