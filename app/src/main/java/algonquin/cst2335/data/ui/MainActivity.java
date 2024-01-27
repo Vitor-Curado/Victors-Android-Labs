@@ -16,13 +16,13 @@ import algonquin.cst2335.data.data.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private MainViewModel model;
-    //private ActivityMainBinding variableBinding;
+    private MainViewModel model;
+    private ActivityMainBinding variableBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        /*
+
         model = new ViewModelProvider(this).get(MainViewModel.class);
 
         // The next step is to replace the setConventView() function call with:
@@ -56,26 +56,29 @@ public class MainActivity extends AppCompatActivity {
         variableBinding.checkBox.setOnCheckedChangeListener((btn, isChecked) ->
         {
             model.selected.postValue(isChecked);
-            Toast toast = Toast.makeText(this /* MyActivity , "The value is now: " + isChecked , Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
             toast.show();
         });
 
         variableBinding.radioButton.setOnCheckedChangeListener((btn, isChecked) ->
         {
             model.selected.postValue(isChecked);
-            Toast toast = Toast.makeText(this /* MyActivity , "The value is now: " + isChecked , Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
             toast.show();
         });
 
         variableBinding.switch1.setOnCheckedChangeListener((btn, isChecked) ->
         {
             model.selected.postValue(isChecked);
-            Toast toast = Toast.makeText(this /* MyActivity , "The value is now: " + isChecked , Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
             toast.show();
         });
 
         // Part 6/6:
-        // In Java, use ViewBinding to add any onClick or onCheckedChange listeners.
-        */
+        // Use ViewBinding in Java to initialize the variable with an onClickListener()
+        variableBinding.myimagebutton.setOnClickListener(click ->
+        {
+            Toast.makeText(this, "The width = " + variableBinding.myimagebutton.getWidth() + "and height = " + variableBinding.myimagebutton.getHeight(), Toast.LENGTH_SHORT).show();
+        });
     }
 }
