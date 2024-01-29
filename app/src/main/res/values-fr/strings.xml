@@ -6,4 +6,9 @@
     <string name="editmessage">Je suis un texte pour editer</string>
     <string name="hinttext">Ecrivez quelque chose ici</string>
     <string name="question">Est-ce que vous buvez du café?</string>
+    <string name="spin_message">Tourner le drapeau</string>
+    <string name="button">Bouton</string>
+    <string name="button1">Bouton un</string>
+    <string name="button2">Bouton deux</string>
+    <string name="button3">Bouton trois</string>
 </resources>
