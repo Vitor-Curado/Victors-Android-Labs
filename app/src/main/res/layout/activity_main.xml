@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="algonquin.cst2335.data.ui.MainActivity">
+    tools:context="algonquin.cst2335.data.ui.MainActivity"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp">
 
     <TextView
         android:id="@+id/mytext"
@@ -102,7 +106,10 @@
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:nextFocusDown="@id/switch1"
+        android:nextFocusRight="@id/button2"
+        android:nextFocusLeft="@id/button3" />
 
     <Button
         android:id="@+id/button2"
@@ -113,7 +120,10 @@
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button1"
-        app:layout_constraintTop_toTopOf="@+id/button1" />
+        app:layout_constraintTop_toTopOf="@+id/button1"
+        android:nextFocusDown="@id/switch1"
+        android:nextFocusRight="@id/button3"
+        android:nextFocusLeft="@id/button1" />
 
     <Button
         android:id="@+id/button3"
@@ -124,7 +134,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        android:nextFocusDown="@id/switch1"
+        android:nextFocusRight="@id/button1"
+        android:nextFocusLeft="@id/button2" />
 
     <Switch
         android:id="@+id/switch1"
