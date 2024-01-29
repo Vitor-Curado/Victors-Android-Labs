@@ -10,4 +10,11 @@
     <string name="button1">Button one</string>
     <string name="button2">Button two</string>
     <string name="button3">Button three\n</string>
+    <string name="email">Enter your email address:</string>
+    <string name="address">Type email here</string>
+    <string name="password">Type your password:</string>
+    <string name="word"> Password goes here </string>
+    <string name="login">Login</string>
+    <string name="call">Call number</string>
+    <string name="picture">Change picture</string>
 </resources>

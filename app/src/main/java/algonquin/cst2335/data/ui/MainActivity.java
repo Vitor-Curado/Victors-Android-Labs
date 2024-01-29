@@ -3,15 +3,15 @@ package algonquin.cst2335.data.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
-import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
+import algonquin.cst2335.brag0033.SecondActivity;
 import algonquin.cst2335.brag0033.databinding.ActivityMainBinding;
 import algonquin.cst2335.data.data.MainViewModel;
 
@@ -19,89 +19,72 @@ import algonquin.cst2335.data.data.MainViewModel;
 // Comments typed successfully
 // I am now doing the doo doo doo
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity
+{
     private MainViewModel model;
     private ActivityMainBinding variableBinding;
+    private static String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
+        // Lab 4: added this line as ordered.
+        Log.w( "MainActivity", "In onCreate() - Loading Widgets" );
 
+        super.onCreate(savedInstanceState);
         model = new ViewModelProvider(this).get(MainViewModel.class);
 
         // The next step is to replace the setConventView() function call with:
         variableBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(variableBinding.getRoot());
 
-        // editString was cast using toString()
-        variableBinding.mytext.setText(model.editString.toString());
-
-        variableBinding.mybutton.setOnClickListener(click ->
+        // I guess this is lab 4?
+        variableBinding.loginButton.setOnClickListener(click ->
         {
-            model.editString.postValue(variableBinding.myedittext.getText().toString());
-            variableBinding.mytext.setText("Your edit has: " + model.editString);
+            Intent nextPage = new Intent( MainActivity.this, SecondActivity.class);
+            // An Intent object also lets you send variables to the next Activity using the putExtra() functions:
+            // (example)
+            // if you weren't properly informed, vroom vroom is true
+            // nextPage.putExtra("Vroom vroom", true);
+            nextPage.putExtra( "EmailAddress", variableBinding.emailEditText.getText().toString() );
+
+            // Then to actually make the transition, you call startActivity with the intent objectstartActivity( nextPage);
+            startActivity( nextPage);
         });
+    }
 
-        model.editString.observe(this, s ->
-        {
-            variableBinding.mytext.setText("Your edit text has " + s);
-        });
+    // Added the functions onResume(), onPause(), onStop(), onDestroy(), and onStart as ordered.
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        Log.w(TAG, "The application is now responding to user input");
+    }
 
-        // Lab 5/6 session:
-        model.selected.observe(this, selected ->
-        {
-            variableBinding.checkBox.setChecked(selected);
-            variableBinding.radioButton.setChecked(selected);
-            variableBinding.switch1.setChecked(selected);
-        });
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        Log.w(TAG, "The application no longer responds to user input");
+    }
 
-        // Lastly, call setOnCheckedChangeListener( ) on each button,
-        // but use the Lambda function version.
-        variableBinding.checkBox.setOnCheckedChangeListener((btn, isChecked) ->
-        {
-            model.selected.postValue(isChecked);
-            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
-            toast.show();
-        });
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        Log.w(TAG, "The application is no longer visible");
+    }
 
-        variableBinding.radioButton.setOnCheckedChangeListener((btn, isChecked) ->
-        {
-            model.selected.postValue(isChecked);
-            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
-            toast.show();
-        });
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        Log.w(TAG, "Any memory used by the application is freed");
+    }
 
-        variableBinding.switch1.setOnCheckedChangeListener((btn, isChecked) ->
-        {
-            model.selected.postValue(isChecked);
-            Toast toast = Toast.makeText(this /* MyActivity */, "The value is now: " + isChecked , Toast.LENGTH_SHORT);
-            toast.show();
-        });
-
-        // Part 6/6:
-        // Use ViewBinding in Java to initialize the variable with an onClickListener()
-        variableBinding.myimagebutton.setOnClickListener(click ->
-        {
-            Toast.makeText(this, "The width = " + variableBinding.myimagebutton.getWidth() + "and height = " + variableBinding.myimagebutton.getHeight(), Toast.LENGTH_SHORT).show();
-        });
-
-        // Lab 3: spinning a flag
-        variableBinding.switch1.setOnCheckedChangeListener((btn, isChecked) ->
-        {
-            if (isChecked)
-            {
-                RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                rotate.setDuration(5000);
-                rotate.setRepeatCount(Animation.INFINITE);
-                rotate.setInterpolator(new LinearInterpolator());
-
-                variableBinding.imageView.startAnimation(rotate);
-            }
-
-            else {
-                variableBinding.imageView.clearAnimation();
-            }
-        });
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        Log.w(TAG, "The application is now visible on screen");
     }
 }

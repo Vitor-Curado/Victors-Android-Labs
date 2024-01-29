@@ -11,4 +11,9 @@
     <string name="button1">Bouton un</string>
     <string name="button2">Bouton deux</string>
     <string name="button3">Bouton trois</string>
+    <string name="email">Ecrivez votre adresse d\'email</string>
+    <string name="address">Ecrivez ici</string>
+    <string name="password">Ecrivez votre mot de passe:</string>
+    <string name="login">Rejoindre</string>
+    <string name="word">Ici le mot de passe</string>
 </resources>
