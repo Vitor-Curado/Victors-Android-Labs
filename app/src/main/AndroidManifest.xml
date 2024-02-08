@@ -14,7 +14,6 @@
 
     <!-- Added the uses-permission as instructed -->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
     <application
         android:allowBackup="true"
         android:banner="@drawable/resistance"
@@ -24,8 +23,8 @@
         android:theme="@style/Theme.VictorsAndroidLabs"
         tools:targetApi="31">
         <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
+            android:name="algonquin.cst2335.data.ui.SecondActivity"
+            android:exported="true" />
         <activity
             android:name="algonquin.cst2335.data.ui.MainActivity"
             android:exported="true">

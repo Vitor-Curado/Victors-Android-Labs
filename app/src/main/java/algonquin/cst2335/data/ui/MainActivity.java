@@ -6,12 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
-import android.widget.Toast;
 
-import algonquin.cst2335.brag0033.SecondActivity;
 import algonquin.cst2335.brag0033.databinding.ActivityMainBinding;
 import algonquin.cst2335.data.data.MainViewModel;
 

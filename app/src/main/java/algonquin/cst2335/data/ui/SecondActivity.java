@@ -1,4 +1,4 @@
-package algonquin.cst2335.brag0033;
+package algonquin.cst2335.data.ui;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -13,15 +13,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 
+import algonquin.cst2335.brag0033.R;
 import algonquin.cst2335.brag0033.databinding.ActivityMainBinding;
+import algonquin.cst2335.brag0033.databinding.ActivitySecondBinding;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private ActivityMainBinding variableBinding;
+    public ActivitySecondBinding variableBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        variableBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(variableBinding.getRoot());
 
         // write code to retrieve the Intent object that has the variables
@@ -33,13 +34,13 @@ public class SecondActivity extends AppCompatActivity {
 
         // Apparently, the instructions tell me I have to call a number?
         // Fetching the number first
-        String phoneNumber = variableBinding.emailEditText.getText().toString();
+        //String phoneNumber = fromPrevious.getStringExtra("")
 
         // Set up a listener for the call button. Use the variable phoneNumber to call
-        findViewById(R.id.call).setOnClickListener( click ->
+        findViewById(R.id.call).setOnClickListener(click ->
         {
             Intent call = new Intent(Intent.ACTION_DIAL);
-            call.setData(Uri.parse("tel:" + phoneNumber));
+            call.setData(Uri.parse("tel:" + "123-456-7890"));
 
             // I guess this calls someone?
             startActivity(call);
